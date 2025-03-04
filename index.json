@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": false,
+  "onReachBottomDistance": 50,
+  "scrollIndicator": "none",
+  "usingComponents": {
+    "t-search": "tdesign-miniprogram/search/search"
+  }
+}
