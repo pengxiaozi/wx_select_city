@@ -1,0 +1,42 @@
+<!-- index.wxml -->
+<view class="location">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <t-search placeholder="城市/拼音" t-class="search-input" t-class-input-container="searchs-input" shape="round" />
+  </view>
+  <!-- 当前定位 -->
+  <view class="current-city">
+    <view class="current-city-text">当前定位城市：北京市</view>
+  </view>
+  <!-- 城市列表 -->
+  <scroll-view scroll-y class="city-list" scroll-into-view="{{selectedLetter}}" scroll-with-animation>
+    <view class="city-list-all">
+      <!-- 热门城市 -->
+      <view class="section">
+        <view class="section-title">热门城市</view>
+        <view class="hot-city-container">
+          <block wx:for="{{hotCities}}" wx:key="index">
+            <view class="hot-city">{{item}}</view>
+          </block>
+        </view>
+      </view>
+
+      <block wx:for="{{cityList}}" wx:key="letter">
+        <view id="{{item.letter}}" class="letter-section">
+          <view class="letter-title">{{item.letter}}</view>
+          <block wx:for="{{item.cities}}" wx:key="index">
+            <view class="city-item">{{item}}</view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <!-- 字母导航 -->
+  <view class="letter-nav" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove">
+    <block wx:for="{{cityList}}" wx:key="letter">
+      <view class="nav-letter {{selectedLetter === item.letter ? 'active' : ''}}" bindtap="handleLetterClick" data-letter="{{item.letter}}">{{item.letter}}</view>
+    </block>
+  </view>
+  <view wx:if="{{showTip}}" class="letter-tip">{{selectedLetter}}</view>
+</view>
