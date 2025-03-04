@@ -1,7 +1,6 @@
 {
-  "enablePullDownRefresh": false,
-  "onReachBottomDistance": 50,
-  "scrollIndicator": "none",
+  "navigationBarTitleText": "选择城市",
+  "disableScroll":true,
   "usingComponents": {
     "t-search": "tdesign-miniprogram/search/search"
   }
