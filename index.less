@@ -1,0 +1,162 @@
+/* index.wxss */
+.location {
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.search-input {
+  height: 80rpx;
+  background: #fff;
+  border-radius: 40rpx;
+  padding: 0 30rpx;
+}
+
+.current-city {
+  padding: 0rpx 10rpx;
+  color: #666;
+}
+
+.current-city::before{
+      content: '';
+      display: block;
+      height: 0px;
+      opacity: 1;
+      transform: rotate(0.01deg);
+      border: 0.5px solid #ececec;
+      margin: 20rpx 0rpx;
+}
+
+.current-city::after{
+  content: '';
+  display: block;
+  height: 0px;
+  opacity: 1;
+  transform: rotate(0.01deg);
+  border: 0.5px solid #ececec;
+  margin: 20rpx 0rpx;
+}
+
+.current-city-text{
+  padding-left: 30rpx;
+}
+
+
+//热门城市
+.section {
+  padding: 0 10rpx;
+}
+
+.section-title {
+  color: #999;
+  margin-bottom: 20rpx;
+}
+
+.hot-city-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20rpx;                          
+  padding: 0 20rpx;
+  
+}
+
+/* 单个热门城市项 */
+.hot-city {
+  text-align: center;
+  padding: 16rpx 0;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+}
+
+//城市列表
+.city-list {
+  // height: calc(100vh - 300rpx);
+  // margin-top: 30rpx;
+  flex: 1; /* 自动撑满剩余高度 */
+  overflow: hidden; /* 防止滚动条溢出 */
+}
+
+.city-list-all{
+  padding-left: 30rpx;
+  padding-right: 60rpx;
+}
+
+.letter-section {
+  margin: 40rpx 0;
+}
+
+.letter-title {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.city-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+//字母导航
+.letter-nav {
+  position: fixed; /* 关键点 */
+  right: 10rpx;
+  top: calc(50% + 40px);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50rpx; /* 控制宽度 */
+  z-index: 999;
+}
+
+
+
+.nav-letter {
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #333;
+  margin-bottom: 6rpx;
+  border-radius: 50%;
+  transition: background 0.2s ease-in-out;
+}
+
+.nav-letter.active {
+  background: #7b7d80;
+  color: #fff;
+}
+
+.letter-tip {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 48rpx;
+  border-radius: 50%;
+  z-index: 9999;
+  opacity: 0.8;
+}
+.nav-letter.active::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;    
+  z-index: -1;           
+}
+
+
+.nav-letter.active {
+  font-weight: bold;
+}
